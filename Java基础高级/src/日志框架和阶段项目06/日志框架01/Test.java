@@ -1,0 +1,28 @@
+package 日志框架和阶段项目06.日志框架01;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Test {
+    // 创建Logback的日志对象，代表日志技术
+    public static final Logger LOGGER = LoggerFactory.getLogger("Test.class");
+
+    public static void main(String[] args) {
+        try {
+            LOGGER.debug("main方法开始执行~~");
+            LOGGER.info("开始记录第二行日志，开始做除法~~");
+
+            int a = 10;
+            int b = 0;
+
+            LOGGER.trace("a = " + a);
+            LOGGER.trace("b = " + b);
+
+            System.out.println(a / b);
+        } catch (Exception e) {
+            e.printStackTrace();
+            LOGGER.error("功能出现异常，" + e);
+        }
+
+    }
+}
